@@ -24,52 +24,27 @@ void err(istream_iterator<string> it, T a, Args... args){
 
 #define maxn (int)1e3 + 1000
 
-int bit[maxn];
-
-void update(int id, int val)
-{
-    for (int i = id; i <= maxn; i += (i & (-i)))
-        bit[i] += val;
-}
-
-int get(int id) {
-    int ans = 0;
-    for (int i = id; i > 0; i -= (i & (-i)))
-        ans += bit[i];
-    return ans;
-}
-
-int query(int x, int y)
-{
-    return get(y) - (x == 1 ? 0 : get(x - 1));
-}
-
 int main()
 {
     boost;
     //inp;
-    int n, q, v[maxn], op, x, y, ans, cnt;
+    int n, q, op, x, y, v[maxn];
     cin >> n >> q;
     for (int i = 1; i <= n; i++)
-        update(i, i);
+        v[i] = i;
     while (q--) {
         cin >> op;
         if (op == 1) {
             cin >> x >> y;
-            int xx = query(x, x);
-            int yy = query(y, y);
-            update(x, -xx);
-            update(y, -yy);
-            update(x, yy);
-            update(y, xx);
+            int xx = v[x], yy = v[y];
+            v[x] = yy;
+            v[y] = xx;
         } else {
             cin >> x;
-            cnt = 0;
-            ans = query(x, x);
-            while (ans != x) {
-                ans = query(ans, ans);
-                cnt++;
-            }
+            int ans, cnt = 0;
+            ans = v[x];
+            while (ans != x)
+                ans = v[ans], cnt++;
             cout << cnt << endl;
         }
     }
