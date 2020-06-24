@@ -53,5 +53,4 @@ int main()
     for (int i = 2; i < n; i++)
         cout << " " << cost[i];
     cout << endl;
-    //teste
 }
