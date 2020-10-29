@@ -18,12 +18,11 @@ typedef long long int ll;
 int main()
 {
     //inp;
-    int x, y, z, pv, av;
-    while (scanf("%d %d %d", &x, &y, &z), x + y + z) {
-        pv = x * y * z;
-        int medp = (x + y + z) / 3;
-        while (medp * medp * medp > pv)
-            medp--;
-        printf("%d\n", medp);
-    }
+    int n;
+    double ans = 0.0, temp = 0.0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        ans = (1 / (6 + temp)), temp = ans;
+    ans += 3;
+    printf("%.10lf\n", ans);
 }

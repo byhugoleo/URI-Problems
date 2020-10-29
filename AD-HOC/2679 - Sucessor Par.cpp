@@ -19,10 +19,6 @@ int main()
 {
     //inp;
     int n;
-    double ans = 0.0, temp = 0.0;
     scanf("%d", &n);
-    for (int i = 0; i < n; i++)
-        ans = (1 / (6 + temp)), temp = ans;
-    ans += 3;
-    printf("%.10lf\n", ans);
-}
+    printf("%d\n", (!n ? 2 : !(n % 2) ? n + 2 : n + 1));
+}   

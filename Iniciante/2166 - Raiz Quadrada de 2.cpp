@@ -19,7 +19,10 @@ int main()
 {
     //inp;
     int n;
+    double ans = 0.0, temp = 0.0;
     scanf("%d", &n);
-    n *= 2;
-    printf("%d\n", n + n);
+    for (int i = 0; i < n; i++)
+        ans = (1.0 / (2.0 + temp)), temp = ans;
+    ans += 1;
+    printf("%.10lf\n", ans);
 }

@@ -18,9 +18,13 @@ typedef long long int ll;
 int main()
 {
     //inp;
-    int a, b, c;
-    while (scanf("%d %d", &a, &b), a + b) {
-        c = 2 * a - b;
-        printf("%d\n", c);
+    int x[5], y, ans = 0;
+    for (int i = 0; i < 5; i++)
+        scanf("%d", x + i);
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &y);
+        if (y != x[i])
+            ans++;
     }
+    printf("%s\n", (ans == 5 ? "Y" : "N"));
 }

@@ -18,7 +18,9 @@ typedef long long int ll;
 int main()
 {
     //inp;
-    int n;
-    scanf("%d", &n);
-    printf("%d\n", (!n ? 2 : !(n % 2) ? n + 2 : n + 1));
-}   
+    string alpha, st;
+    cin >> alpha >> st;
+    for (int i = 0; i < sz(st); i++)
+        printf("%c", alpha[st[i] - 'a']);
+    puts("");
+}

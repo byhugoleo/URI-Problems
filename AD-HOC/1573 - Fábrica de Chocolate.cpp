@@ -18,9 +18,12 @@ typedef long long int ll;
 int main()
 {
     //inp;
-    string alpha, st;
-    cin >> alpha >> st;
-    for (int i = 0; i < sz(st); i++)
-        printf("%c", alpha[st[i] - 'a']);
-    puts("");
+    int x, y, z, pv, av;
+    while (scanf("%d %d %d", &x, &y, &z), x + y + z) {
+        pv = x * y * z;
+        int medp = (x + y + z) / 3;
+        while (medp * medp * medp > pv)
+            medp--;
+        printf("%d\n", medp);
+    }
 }
